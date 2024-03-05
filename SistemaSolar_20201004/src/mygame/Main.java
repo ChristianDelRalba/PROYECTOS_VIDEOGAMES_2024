@@ -79,6 +79,24 @@ public class Main extends SimpleApplication {
         matTierra.setColor("Color", ColorRGBA.Blue);
         matMarte.setColor("Color", ColorRGBA.Red);
         matJupiter.setColor("Color", ColorRGBA.Orange);
+        
+        // Asignar los materiales a las geometrías
+        geomSol.setMaterial(matSol);
+        geomMercurio.setMaterial(matMercurio);
+        geomVenus.setMaterial(matVenus);
+        geomTierra.setMaterial(matTierra);
+        geomMarte.setMaterial(matMarte);
+        geomJupiter.setMaterial(matJupiter);
+        
+        // Añadir las geometrías al nodo raíz de la escena
+        rootNode.attachChild(geomSol);
+        rootNode.attachChild(geomMercurio);
+        rootNode.attachChild(geomVenus);
+        rootNode.attachChild(geomTierra);
+        rootNode.attachChild(geomMarte);
+        rootNode.attachChild(geomJupiter);
+        
+       
     }
 
     @Override
