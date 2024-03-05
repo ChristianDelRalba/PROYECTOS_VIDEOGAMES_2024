@@ -23,7 +23,20 @@ public class Main extends SimpleApplication {
     //materiales
     private Material matSol, matMercurio, matVenus, matTierra, matMarte, matJupiter;
     
+    //radio orbitas
+    private int rad_Mercurio = 10;
+    private int rad_Venus = 18;
+    private int rad_Tierra = 25;
+    private int rad_Marte = 33;
+    private int rad_Jupiter = 45;
     
+    //angular veloci
+    private int vel_Mercurio = 0.05;
+    private int vel_Venus = 0.03;
+    private int vel_Tierra = 0.02;
+    private int vel_Marte = 0.015;
+    private int vel_Jupiter = 0.01;
+
     
 
     public static void main(String[] args) {
