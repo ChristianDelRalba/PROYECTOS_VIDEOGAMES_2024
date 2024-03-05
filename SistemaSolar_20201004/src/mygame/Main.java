@@ -46,14 +46,9 @@ public class Main extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
-        Box b = new Box(1, 1, 1);
-        Geometry geom = new Geometry("Box", b);
-
-        Material mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-        mat.setColor("Color", ColorRGBA.Blue);
-        geom.setMaterial(mat);
-
-        rootNode.attachChild(geom);
+        //camara y raton
+        cam.setLocation(new Vector3f(0f, 0f, 100f));
+        flycam.setMoveSpeed(10);
     }
 
     @Override
