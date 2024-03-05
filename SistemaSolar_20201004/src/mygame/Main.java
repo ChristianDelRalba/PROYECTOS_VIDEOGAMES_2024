@@ -6,6 +6,7 @@ import com.jme3.math.ColorRGBA;
 import com.jme3.renderer.RenderManager;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.shape.Box;
+import com.jme3.scene.shape.Sphere;
 
 /**
  * This is the Main Class of your Game. You should only do initialization here.
@@ -39,16 +40,45 @@ public class Main extends SimpleApplication {
 
     
 
-    public static void main(String[] args) {
-        Main app = new Main();
-        app.start();
-    }
+    
 
     @Override
     public void simpleInitApp() {
         //camara y raton
         cam.setLocation(new Vector3f(0f, 0f, 100f));
         flycam.setMoveSpeed(10);
+        
+        //esferas planetas y sol
+        sol = new Sphere(32, 32, 5f);
+        mercurio = new Sphere(32, 32, 0.5f);
+        venus = new Sphere(32, 32, 1f);
+        tierra = new Sphere(32, 32, 1f);
+        marte = new Sphere(32, 32, 0.8f);
+        jupiter = new Sphere(32, 32, 3f);
+        
+        //geometrias sol y planetas
+        geomSol = new Geometry("Sol", sol);
+        geomMercurio = new Geometry("Mercurio", mercurio);
+        geomVenus = new Geometry("Venus", venus);
+        geomTierra = new Geometry("Tierra", tierra);
+        geomMarte = new Geometry("Marte", marte);
+        geomJupiter = new Geometry("Jupiter", jupiter);
+        
+        //materiales
+        matSol = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        matMercurio = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        matVenus = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        matTierra = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        matMarte = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        matJupiter = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        
+        //colores
+        matSol.setColor("Color", ColorRGBA.Yellow);
+        matMercurio.setColor("Color", ColorRGBA.Gray);
+        matVenus.setColor("Color", ColorRGBA.Brown);
+        matTierra.setColor("Color", ColorRGBA.Blue);
+        matMarte.setColor("Color", ColorRGBA.Red);
+        matJupiter.setColor("Color", ColorRGBA.Orange);
     }
 
     @Override
@@ -60,4 +90,9 @@ public class Main extends SimpleApplication {
     public void simpleRender(RenderManager rm) {
         //TODO: add render code
     }
+    
+public static void main(String[] args) {
+    Main app = new Main();
+    app.start();
+}
 }
