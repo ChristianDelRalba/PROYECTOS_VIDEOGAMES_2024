@@ -13,6 +13,18 @@ import com.jme3.scene.shape.Box;
  * @author normenhansen
  */
 public class Main extends SimpleApplication {
+    
+    //angulos
+    private double anguloMercurio, anguloVenus, anguloTierra, anguloMarte, anguloJupiter = 0;
+    //esferass
+    private Sphere sol, mercurio, venus, tierra, marte, jupiter;
+    //geometrias
+    private Geometry geomSol, geomMercurio, geomVenus, geomTierra, geomMarte, geomJupiter;
+    //materiales
+    private Material matSol, matMercurio, matVenus, matTierra, matMarte, matJupiter;
+    
+    
+    
 
     public static void main(String[] args) {
         Main app = new Main();
